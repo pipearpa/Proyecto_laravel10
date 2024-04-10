@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Cursor;
 
 class CursoController extends Controller
 {
     public function index(){
-        return "Bienvenido a la pagina principal de cursos";
+        return view('cursos.index');
     }
 
     public function create(){
-        return "En esta pagina podras crear cursos";
+        return view('cursos.create');
     }
 
     public function show($curso){
-        return "Bienvenido al curso $curso";
+        return view('cursos.show', ['curso' => $curso]);
     }
 }
